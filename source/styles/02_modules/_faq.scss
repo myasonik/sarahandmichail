@@ -1,0 +1,14 @@
+.faq {
+  > dt {
+
+  }
+
+  > dd {
+    margin: 0 0 1em 0;
+    text-indent: 1em;
+
+    * {
+      text-indent: 0;
+    }
+  }
+}

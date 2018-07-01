@@ -1,0 +1,33 @@
+.about {
+  &__p {
+    margin-bottom: 2em;
+  }
+
+  &__person {
+    display: block;
+    background-color: rgba(palette(teal), .25);
+    position: relative;
+    padding: .25em .5em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(palette(teal), .25);
+      transform: skew(15deg) rotate(-10deg);
+    }
+
+    &--sarah {
+      float: left;
+      margin-right: .5em;
+    }
+
+    &--michail {
+      float: right;
+      margin-left: .5em;
+    }
+  }
+}

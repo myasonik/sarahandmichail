@@ -1,4 +1,0 @@
-@function is-valid-position($value) {
-  @return (type-of($value) == "number" and not unitless($value)) 
-    or (index(null auto initial inherit 0, $value) != null);
-}

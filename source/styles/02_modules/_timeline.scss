@@ -1,0 +1,66 @@
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__event {
+    > h3 {
+      position: relative;
+    }
+
+    & > h3::before {
+      content: '';
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: .25em;
+      bottom: 0;
+      right: calc(100% + .25em);
+      font-size: 1.25em;
+    }
+
+    &--wave > h3::before {
+      content: '👋';
+    }
+
+    &--email > h3::before {
+      content: '📧';
+    }
+
+    &--date > h3::before {
+      content: '👫';
+    }
+
+    &--heart > h3::before {
+      content: '💝';
+    }
+
+    &--college > h3::before {
+      content: '🎓';
+    }
+
+    &--house > h3::before {
+      content: '🏡';
+    }
+
+    &--vacation > h3::before {
+      content: '🏝';
+    }
+
+    &--sf > h3::before {
+      content: '🌉';
+    }
+
+    &--ring > h3::before {
+      content: '💍';
+    }
+
+    &--seattle > h3::before {
+      content: '🌦';
+    }
+
+    &--wedding > h3::before {
+      content: '🎊';
+    }
+  }
+}

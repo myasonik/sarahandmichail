@@ -1,36 +1,88 @@
-@viewport { width: device-width; }
-
-* {
-  margin: 0;
-  padding: 0;
-
-  &,
-  &:before,
-  &:after {
-    box-sizing: inherit;
-  }
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
-::selection {
-  // background-color:;
-  // color:;
-  // text-shadow:;
+main * + * {
+  margin-top: 1em;
 }
 
 html {
+  font-size: 1em;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font: 62.5%/1.25 $regular;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 body,
-input {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+}
+
+main {
+  padding: 0 3em;
+}
+
+button {
+  font-size: 1em;
+}
+
+h1, h2, h3, h4, .heading {
+  font-family: 'Comfortaa', serif;
+  line-height: 1.2;
+  padding: .67em 0 .33em 0;
+  margin: 0;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5em;
+  // font-weight: 400;
+}
+
+h2 {
+  background-color: #333;
+  padding-left: 3rem; /* only cuz it's got .full-width on it */
+  font-size: 2em;
+  color: white;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+address {
+  font-style: normal;
+  margin: 0;
 }
 
 img {
-  max-width:100%;
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+  min-height: 208px; /* google maps defined */
+  min-width: 208px; /* google maps defined */
+  height: 500px;
+  margin-top: 0;
+}
+
+[hidden] {
+  display: none;
+}
+
+textarea {
+  width: 100%;
 }

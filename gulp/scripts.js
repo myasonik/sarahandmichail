@@ -1,6 +1,6 @@
 var $ = require('./common.js');
 var config = require('./config.js');
-var eslintOptions = require('../.eslintrc.js');
+var eslintOptions = require('../.eslintrc.json');
 
 var eslint = require('gulp-eslint');
 var uglify = require('gulp-uglify');

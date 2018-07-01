@@ -3,25 +3,38 @@
 @import 'vars';
 
 @import 'utils/functions/map-getters';
-@import 'utils/functions/valid-value';
 
-@import 'utils/mixins/attention';
-@import 'utils/mixins/clearfix';
 @import 'utils/mixins/hide-text';
-@import 'utils/mixins/reset';
 
-@import 'global/normalize'; // not in vendor because it's altered
 @import 'global/base';
 
 // @import 'components/atoms/';
 
-// @import 'components/modules/';
+@import '02_modules/faq';
+@import '02_modules/language-picker';
+@import '02_modules/nav';
+@import '02_modules/timeline';
 
-// @import 'components/sections/';
+@import '03_sections/about';
+@import '03_sections/itinerary';
 
 // @import 'components/templates/';
 
 // @import 'components/views/';
+
+.header {
+  text-align: center;
+}
+
+.header * {
+  margin-top: 0;
+}
+
+.countdown {
+  display: block;
+  font-size: 3em;
+  margin-top: 0;
+}
 
 @import 'global/trumps';
 @import 'global/shame';

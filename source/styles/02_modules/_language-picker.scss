@@ -1,0 +1,26 @@
+.language-picker {
+  position: fixed;
+  right: 1em;
+  bottom: 5.5em;
+  z-index: 1;
+  overflow: hidden;
+  background: white;
+  box-shadow:
+    0 6px 10px 0 rgba(0,0,0,0.14),
+    0 1px 18px 0 rgba(0,0,0,0.12),
+    0 3px 5px -1px rgba(0,0,0,0.2);
+  border-radius: 50%;
+  height: 3.5em;
+  width: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+
+  transition: all .25s;
+
+  .is-open + & {
+    bottom: 22.7em;
+  }
+}
