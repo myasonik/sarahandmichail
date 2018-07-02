@@ -2,6 +2,34 @@
   width: 100vw;
   margin-left: -3rem;
   margin-right: -3rem;
+
+  @include breakpoint($one) {
+    margin-left: -3.4rem;
+    margin-right: -3.4rem;
+  }
+
+  @include breakpoint($two) {
+    width: 66.6666vw;
+  }
+}
+
+.forever-full {
+  width: 100vw;
+  margin-left: -3rem;
+  margin-right: -3rem;
+
+  @include breakpoint($one) {
+    margin-left: -3.4rem;
+    margin-right: -3.4rem;
+  }
+
+  @include breakpoint($two) {
+    margin-left: calc(-33.3333vw - 3.4rem);
+
+    span {
+      margin-left: 33.3333vw;
+    }
+  }
 }
 
 .bkgd-blue {

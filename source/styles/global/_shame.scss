@@ -118,6 +118,23 @@
   padding: 1em 1em 1.5em 1em;
 }
 
+.index-page {
+  margin-bottom: 10em;
+
+  h1 {
+    font-size: 9vw;
+  }
+
+  @include breakpoint($two) {
+    width: 66.6666%;
+    margin-left: auto;
+
+    h1 {
+      font-size: 7vw;
+    }
+  }
+}
+
 .rsvp-page {
   min-height: 100vh;
   padding-bottom: 5em;
@@ -126,10 +143,6 @@
   h1 {
     color: white;
   }
-}
-
-.index-page {
-  margin-bottom: 10em;
 }
 
 fieldset {

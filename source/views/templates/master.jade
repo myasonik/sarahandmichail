@@ -6,21 +6,22 @@ html(lang="en")
         meta(charset='UTF-8')
         meta(name='robots' content='noindex')
         meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
         link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:700|Open+Sans&amp;subset=cyrillic")
 
         //- link(rel='dns-prefetch', href='//example.com')
 
         if !production
-            link(rel='stylesheet', href='main.css')
+            link(rel='stylesheet', href='/main.css')
         else
-            link(rel='stylesheet', href='main.min.css')
+            link(rel='stylesheet', href='/main.min.css')
 
     body
         block body
 
         if !production
-            script(src='main.js')
+            script(src='/main.js')
         else
-            script(src='main.min.js')
+            script(src='/main.min.js')
 
         block scripts

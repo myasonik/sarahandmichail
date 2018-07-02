@@ -1,105 +1,96 @@
 extends templates/master
 
 block body
-  nav#nav.nav(aria-label='Site navigation' hidden)
-    button#navigation-btn.nav__button(aria-expanded='false', aria-controls='navigation-list' aria-label='Menu')
+  nav#nav.nav(aria-label=text['index.nav.label'] hidden)
+    button#navigation-btn.nav__button(aria-expanded='false', aria-controls='navigation-list' aria-label=text['index.nav.menu'])
       span.nav__burger
-      span.nav__text Menu
+      span.nav__text #{text['index.nav.menu']}
     ul#navigation-list.nav__list
       li.nav__item
-        a.nav__link.bkgd-blue(href='#itinerary') Itinerary
+        a.nav__link.bkgd-blue(href='#itinerary') #{text['index.nav.itinerary']}
       li.nav__item
-        a.nav__link.bkgd-teal(href='#about') About Us
+        a.nav__link.bkgd-teal(href='#about') #{text['index.nav.about']}
       li.nav__item
-        a.nav__link.bkgd-yellow(href='#timeline') Timeline
+        a.nav__link.bkgd-yellow(href='#timeline') #{text['index.nav.timeline']}
       li.nav__item
-        a.nav__link.bkgd-orange(href='#photos') Photos
+        a.nav__link.bkgd-orange(href='#photos') #{text['index.nav.photos']}
       li.nav__item
-        a.nav__link.bkgd-red(href='#faq') Q&amp;A
-  a.language-picker(aria-label='Читай на русском', href='/ru')
-    span.language-picker__ru 🇷🇺
+        a.nav__link.bkgd-red(href='#faq') #{text['index.nav.faq']}
+  a.language-picker(aria-label=text['index.lang.label'], href=text['index.lang.url'])
+    span.language-picker__ru #{text['index.lang.icon']}
   main.index-page
     header#welcome.header
-      h1.full-width Sarah &amp; Michail
-      p Milwaukee, WI, USA
-      p: time(datetime='2018-09-08') Saturday, September 8, 2018
+      h1.full-width #{text['index.header.title']}
+      p #{text['index.header.location']}
+      p: time(datetime='2018-09-08') #{text['index.header.date']}
       span#countdown.countdown.full-width(role='timer', aria-live='polite', aria-atomic='true')
-      a(href='/rsvp.html').rsvp-button: span RSVP
+      a(href=text['index.header.url']).rsvp-button: span #{text['index.header.rsvp']}
     section#itinerary
-      h2.full-width.bkgd-blue The plan!
+      h2.forever-full.bkgd-blue: span #{text['index.nav.itinerary']}
       section.itinerary
         header.itinerary__title
-          h3 Ceremony
-          p
-            time(datetime='2018-09-08 15:30') 3:30 PM
+          h3 #{text['index.itinerary.ceremony.title']}
+          p: time(datetime='2018-09-08 15:30') #{text['index.itinerary.ceremony.time']}
         address
-          p Virmond Park
-          p 10606 N Lake Shore Dr
-          p Mequon, WI 53092
+          p #{text['index.itinerary.park']}
+          p #{text['index.itinerary.ceremony.address.lineTwo']}
+          p #{text['index.itinerary.ceremony.address.lineThree']}
         details.itinerary__map
-          summary
-            | See map
+          summary #{text['index.itinerary.map']}
           iframe.full-width(src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAD3ow3jbGkVnlpEUB8wM-Imp6A0SVaEqg&q=place_id:ChIJ91jlwxjhBIgRgHC28q9I5ls')
-        p
-          | Virmond Park is actually a quite special place to us. We spent a lot of time in the park as teenagers, as it was our go-to destinations on weekends or after school. We’re excited to get married in a location so close to our hearts.
+        p #{text['index.itinerary.ceremony.desc']}
       section.itinerary
         header.itinerary__title
-          h3 Family Photos
-          p
-            time(datetime='2018-09-08 16:00') 4:00 PM
-        p Virmond Park
-        p
-          | Our families are going to take some time to take a few photos in the park before head on downtown.
+          h3 #{text['index.itinerary.photos.title']}
+          p: time(datetime='2018-09-08 16:00') #{text['index.itinerary.photos.time']}
+        p #{text['index.itinerary.park']}
+        p #{text['index.itinerary.photos.desc']}
       section.itinerary
         header.itinerary__title
-          h3 Cocktail Hour
-          p
-            time(datetime='2018-09-08 16:30') 4:30 PM
+          h3 #{text['index.itinerary.cocktail.title']}
+          p: time(datetime='2018-09-08 16:30') #{text['index.itinerary.cocktail.time']}
         address
-          p The Box
-          p 311 E. Wisconsin Ave
-          p Milwaukee, WI 53202
+          p #{text['index.itinerary.box']}
+          p #{text['index.itinerary.cocktail.address.lineTwo']}
+          p #{text['index.itinerary.cocktail.address.lineThree']}
         details.itinerary__map
-          summary
-            | See map
+          summary #{text['index.itinerary.map']}
           iframe.full-width(src='https://www.google.com/maps/embed/v1/directions?key=AIzaSyAD3ow3jbGkVnlpEUB8wM-Imp6A0SVaEqg&origin=Virmond+Park,Mequon+WI&destination=The+Box,Milwaukee+WI')
-        p
-          | Enjoy a drink while the couple and their families wraps up some photos! Feel free to also hang out in the park a little longer if you like, or play a few board games at The Box!
+        p #{text['index.itinerary.cocktail.desc']}
       section.itinerary
         header.itinerary__title
-          h3 Reception
-          p
-            time(datetime='2018-09-08 18:30') 6:30 PM
-        p The Box
-        p Dinner, dancing, and dessert!
+          h3 #{text['index.itinerary.reception.title']}
+          p: time(datetime='2018-09-08 18:30') #{text['index.itinerary.reception.time']}
+        p #{text['index.itinerary.box']}
+        p #{text['index.itinerary.reception.desc']}
     section#about
-      h2.full-width.bkgd-teal About Us
+      h2.forever-full.bkgd-teal: span #{text['index.nav.about']}
       p.about__p
-        span.about__person.about__person--sarah Sarah
-        |  Michail and I have actually known each other for a long time! We met in 6th grade when Michail transferred into the Mequon-Thiensville school district. By 7th grade, I’m pretty sure he had a massive crush on me, so it was unsurprising when in 8th grade, he asked me on a date to “eat Oreos and see the new Evan Almighty movie” with him.
+        span.about__person.about__person--sarah #{text['index.about.sarah']}
+        | #{text['index.about.desc10']}
       p.about__p
-        span.about__person.about__person--michail Michail
-        |  Unfortunately for me, Sarah shot me down! Really, though, how could anyone refuse an offer like that? Realizing I came on a bit strong, I eased up for a couple years. Sarah and I didn’t become close again until the summer before our sophomore year of high school.
+        span.about__person.about__person--michail #{text['index.about.michail']}
+        | #{text['index.about.desc20']}
       p.about__p
-        span.about__person.about__person--sarah Sarah
-        |  Michail certainly grew up quite a bit between 8th grade and sophomore year, and I couldn’t help but notice he was becoming quite the young man - funny, clever, and full of boundless energy. However, some things about a person just don’t change. One day after school, I wasn’t particularly surprised when Michail told me he’d lost his house keys, and his parents wouldn’t be home several hours.
+        span.about__person.about__person--sarah #{text['index.about.sarah']}
+        | #{text['index.about.desc30']}
       p.about__p
-        span.about__person.about__person--michail Michail
-        |  And of course, I couldn’t stay all alone at school.
+        span.about__person.about__person--michail #{text['index.about.michail']}
+        | #{text['index.about.desc40']}
       p.about__p
-        span.about__person.about__person--sarah Sarah
-        |  Ok, whatever. Either way, Michail rode the bus home with me (with my Mom’s approval of course — thanks, Mom!).
+        span.about__person.about__person--sarah #{text['index.about.sarah']}
+        | #{text['index.about.desc50']}
       p.about__p
-        span.about__person.about__person--michail Michail
-        | We were already super adorable at that point, so we watched the Lion King and ate a frozen pizza while holding hands on Sarah’s couch. Today, we consider that to be our first date, and we celebrate our anniversary on that day — September 18, 2008.
+        span.about__person.about__person--michail #{text['index.about.michail']}
+        | #{text['index.about.desc60']}
       p.about__p
-        span.about__person.about__person--sarah Sarah
-        |  Yep! Throw in a few more years of high school, 2 ½ years of long distance during college, a couple years together in Ohio, a few years in San Francisco, and that basically brings us up to today! We just moved to Seattle in May, and we’ve got some longer term travel intentions as well.
+        span.about__person.about__person--sarah #{text['index.about.sarah']}
+        | #{text['index.about.desc70']}
       p.about__p
-        span.about__person.about__person--michail Michail
-        |  Our next plan is start travelling internationally, working remotely and hopping from country-to-country for several months at a time. Sarah and I are always looking for the next adventure, experience, or experiment, especially when it comes to food and travel. Marriage will certainly be an adventure in itself!
+        span.about__person.about__person--michail #{text['index.about.michail']}
+        | #{text['index.about.desc80']}
     section#timeline
-      h2.full-width.bkgd-yellow Timeline
+      h2.forever-full.bkgd-yellow: span Timeline
       ol.timeline
         li.timeline__event.timeline__event--wave
           h3 Michail &amp; Sarah meet
@@ -149,10 +140,10 @@ block body
           p 10 days from their 10-year anniversary! Their anniversary swaps from 09-18-08 to 09-08-18.
 
     section#photos
-      h2.full-width.bkgd-orange Photos
+      h2.forever-full.bkgd-orange: span Photos
       p Come back soon to see pictures of us through the years! Awkward high school photos bare all!
     section#faq
-      h2.full-width.bkgd-red Q&amp;A
+      h2.forever-full.bkgd-red: span Q&amp;A
       dl.faq
         dt.heading Are you registered anywhere?
         dd Gifts are certainly not necessary &mdash; just your presence as we celebrate is enough for us! Though there’s no need for gifts, we can appreciate that gifting is a primary love language for many of the people we care about. We’ve come up with some options for those folks:

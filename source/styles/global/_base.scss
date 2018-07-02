@@ -15,6 +15,10 @@ html {
 body {
   margin: 0 auto;
   overflow-x: hidden;
+
+  @include breakpoint($one) {
+    font-size: 1.125em;
+  }
 }
 
 body,
@@ -43,7 +47,6 @@ h1, h2, h3, h4, .heading {
 
 h1 {
   font-size: 2.5em;
-  // font-weight: 400;
 }
 
 h2 {
@@ -51,6 +54,10 @@ h2 {
   padding-left: 3rem; /* only cuz it's got .full-width on it */
   font-size: 2em;
   color: white;
+
+  @include breakpoint($one) {
+    padding-left: 3.4rem;
+  }
 }
 
 h3 {
