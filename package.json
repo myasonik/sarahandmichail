@@ -40,6 +40,9 @@
     "watchify": "3.7.0"
   },
   "dependencies": {
-    "rellax": "^1.6.2"
+    "a11y-dialog": "^5.1.2",
+    "awesomplete": "^1.1.2",
+    "rellax": "^1.6.2",
+    "url-search-params": "^0.10.0"
   }
 }

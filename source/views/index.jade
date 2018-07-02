@@ -90,12 +90,12 @@ block body
         span.about__person.about__person--michail #{text['index.about.michail']}
         | #{text['index.about.desc80']}
     section#timeline
-      h2.forever-full.bkgd-yellow: span Timeline
+      h2.forever-full.bkgd-yellow: span #{text['index.nav.timeline']}
       ol.timeline
         li.timeline__event.timeline__event--wave
-          h3 Michail &amp; Sarah meet
-          time Fall 2004
-          p Michail and Sarah are 6th graders at Lake Shore Middle School.
+          h3 #{text['index.timeline.one.title']}
+          time #{text['index.timeline.one.time']}
+          p #{text['index.timeline.one.desc']}
         li.timeline__event.timeline__event--email
           h3 Michail emails Sarah, inviting her on a date
           time June 21, 2007
@@ -140,10 +140,10 @@ block body
           p 10 days from their 10-year anniversary! Their anniversary swaps from 09-18-08 to 09-08-18.
 
     section#photos
-      h2.forever-full.bkgd-orange: span Photos
-      p Come back soon to see pictures of us through the years! Awkward high school photos bare all!
+      h2.forever-full.bkgd-orange: span #{text['index.nav.photos']}
+      p Come back soon for an area to download all the photos you see here, see some new photos, and upload any photos you have or may take of us!
     section#faq
-      h2.forever-full.bkgd-red: span Q&amp;A
+      h2.forever-full.bkgd-red: span #{text['index.nav.faq']}
       dl.faq
         dt.heading Are you registered anywhere?
         dd Gifts are certainly not necessary &mdash; just your presence as we celebrate is enough for us! Though there’s no need for gifts, we can appreciate that gifting is a primary love language for many of the people we care about. We’ve come up with some options for those folks:
@@ -286,3 +286,14 @@ block body
           figcaption
             h4 Our first photo in Seattle
             time June 02, 2018
+
+  div#rsvp-dialog
+    div(tabindex='-1' data-a11y-dialog-hide)
+    dialog(aria-labelledby='dialog-title')
+      button(type='button' aria-label='Close this dialog window' data-a11y-dialog-hide) &times;
+      h1#dialog-title You’ve RSVP’d! Thanks!
+
+  if !production
+      script(src='/main.js')
+  else
+      script(src='/main.min.js')

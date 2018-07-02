@@ -87,9 +87,10 @@ iframe {
 }
 
 [hidden] {
-  display: none;
+  display: none !important;
 }
 
 textarea {
   width: 100%;
+  font-size: 1em;
 }

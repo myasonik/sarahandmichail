@@ -1,14 +1,16 @@
 extends templates/master
 
 block body
-  main.rsvp-page
+  main#main.rsvp-page
     h1 Thank you for RSVP'ing!
 
-    form(id='rsvp' name='rsvp' method='POST')
+    form(id='rsvp' autocomplete='off' name='rsvp' method='POST')
       fieldset.step.step--1
         label
           span.bigger This RSVP is for:
-          input#family_name(list='guests' autocomplete='off' placeholder='Our lovely guest' required name='family_name')
+          p.error.error--required(hidden) This field is required.
+          p.error.error--match(hidden) Please use one of the available options or call if you’re having trouble.
+          input#family_name(list='guests' autocomplete='nope' placeholder='Our lovely guest' required name='family_name')
         datalist(id='guests')
           option(data-count='4') Yasonik Family
           option(data-count='2') Fuchs Family
@@ -16,12 +18,13 @@ block body
           option(data-count='2') Michael Gorelik
       fieldset.step.step--2
         legend.bigger Will you be attending?
+        p.error.error--required(hidden) This field is required.
         div
           label
-            input#attending(type='radio' name='is_attending' required)
+            input#attending(type='radio' name='is_attending' value='Yes' required)
             span Yes
           label
-            input#nope(type='radio' name='is_attending' required)
+            input#nope(type='radio' name='is_attending' value='No' required)
             span No
       fieldset.step.step--3.hidden
         legend.bigger Please enter the preferred names of all those attending:
@@ -43,6 +46,10 @@ block body
           label
             span Any other messages you’d like to pass along?
             textarea(rows=3 name='additional_comments')
-      button(type='button' id='rsvp-submit')
-        | Send
-        span →
+      button(type='button' id='rsvp-submit') Send
+
+  script(src='https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js')
+  if !production
+    script(src='/rsvp.js')
+  else
+    script(src='/rsvp.min.js')

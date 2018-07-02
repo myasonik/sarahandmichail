@@ -17,8 +17,11 @@
   justify-content: center;
   text-decoration: none;
   color: #333;
-
   transition: all .25s;
+
+  span {
+    font-size: 1.5em;
+  }
 
   .is-open + & {
     bottom: 22.7em;
