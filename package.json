@@ -38,5 +38,8 @@
     "require-dir": "0.3.0",
     "vinyl-source-stream": "1.1.0",
     "watchify": "3.7.0"
+  },
+  "dependencies": {
+    "rellax": "^1.6.2"
   }
 }
