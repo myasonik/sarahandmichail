@@ -4,11 +4,11 @@ block body
   main.rsvp-page
     h1 Thank you for RSVP'ing!
 
-    form(id='rsvp' name='rsvp' method='POST' netlify)
+    form(id='rsvp' name='rsvp' method='POST')
       fieldset.step.step--1
         label
           span.bigger This RSVP is for:
-          input#who(list='guests' autocomplete='off' placeholder='Our lovely guest' required)
+          input#family_name(list='guests' autocomplete='off' placeholder='Our lovely guest' required name='family_name')
         datalist(id='guests')
           option(data-count='4') Yasonik Family
           option(data-count='2') Fuchs Family
@@ -18,31 +18,31 @@ block body
         legend.bigger Will you be attending?
         div
           label
-            input#attending(type='radio' name='attending' required)
+            input#attending(type='radio' name='is_attending' required)
             span Yes
           label
-            input#nope(type='radio' name='attending' required)
+            input#nope(type='radio' name='is_attending' required)
             span No
       fieldset.step.step--3.hidden
-        legend.bigger Please enter the names of all those attending:
+        legend.bigger Please enter the preferred names of all those attending:
         div.rsvp__count
       fieldset.step.hidden
         div
           label
             span Any dietary restrictions?
-            textarea(rows=3)
+            textarea(rows=3 name='dietary_restrictions')
         div
           label
             span What song will get you on the dance floor?
-            textarea(rows=3)
+            textarea(rows=3 name='song_selections')
         div
           label
             span Any advice for us?
-            textarea(rows=3)
+            textarea(rows=3 name='advice')
         div
           label
             span Any other messages you’d like to pass along?
-            textarea(rows=3)
-      button(type='submit')
+            textarea(rows=3 name='additional_comments')
+      button(type='button' id='rsvp-submit')
         | Send
         span →

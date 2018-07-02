@@ -73,7 +73,8 @@ if (countdown) {
 /**
  * RSVP
  */
-const input = document.getElementById('who');
+const input = document.getElementById('family_name');
+const baseUrl = 'https://script.google.com/macros/s/AKfycbwvk33B7BqgzQLLWTr8KYGyQ1ZnJBUsL0chOKnnXMPiqf3y3g0l/exec';
 
 if (input) {
   let awesompleteTriggered = false;
@@ -106,6 +107,7 @@ if (input) {
       for (let i = 0; i < guestCount; i++) {
         let label = document.createElement('label');
         let input = document.createElement('input');
+        input.name = 'guest_name';
 
         label.appendChild(document.createTextNode(`Person ${i+1}:`));
         label.appendChild(input);
@@ -132,4 +134,42 @@ if (input) {
       element.classList.remove('is-not-hidden');
     });
   });
+}
+
+// Allows for user submissions of RSVPs
+document.getElementById('rsvp-submit').addEventListener('click', submitHandler);
+
+// Finds and submits all RSVPs for a family. Handles success/error redirect logic.
+// TODO: Include polyfill for Promise.
+// @return void
+function submitHandler() {
+  const pendingRsvps = getPendingRsvps();
+
+  Promise.all(pendingRsvps).then(function(resp) {
+    // TODO: Include a modal here for redirect functionality!
+    console.log(resp);
+  });
+};
+
+// accesses RSVP form to determine which RSVPs should be created.
+// TODO: Include polyfills for URLSearchParams.
+// @return [Array<Promise>]
+function getPendingRsvps() {
+  const keys = ['family_name', 'is_attending', 'dietary_restrictions', 'song_selections', 'advice', 'additional_comments'];
+  let formData = new FormData(document.getElementById('rsvp'));
+
+  // TODO: Raise error if family_name ("This RSVP is for:") is not included in the mapping.
+
+  let pendingRsvps = formData.getAll('guest_name').map(guestName => {
+    if (guestName === '') return;
+
+    let params = new URLSearchParams();
+    params.set('guest_name', guestName);
+    keys.forEach(function(key) {
+      params.set(key, formData.get(key));
+    });
+
+    const url = baseUrl + '?' + params.toString();
+    return fetch(url);
+  }).filter(rsvp => rsvp != undefined);
 }
