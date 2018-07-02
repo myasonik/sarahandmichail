@@ -1,13 +1,13 @@
 extends templates/master
 
 block body
-  main.rsvp-page
+  main#main.rsvp-page
     h1 Thank you for RSVP'ing!
 
     form(id='rsvp' name='rsvp' method='POST')
       fieldset.step.step--1
         label
-          span.bigger This RSVP is for:
+          span.bigger This RSVP is for:*
           input#family_name(list='guests' autocomplete='off' placeholder='Our lovely guest' required name='family_name')
         datalist(id='guests')
           option(data-count='4') Yasonik Family
@@ -15,13 +15,13 @@ block body
           option(data-count='4') Gorelik Family
           option(data-count='2') Michael Gorelik
       fieldset.step.step--2
-        legend.bigger Will you be attending?
+        legend.bigger Will you be attending?*
         div
           label
-            input#attending(type='radio' name='is_attending' required)
+            input#attending(type='radio' name='is_attending' value='Yes' required)
             span Yes
           label
-            input#nope(type='radio' name='is_attending' required)
+            input#nope(type='radio' name='is_attending' value='No' required)
             span No
       fieldset.step.step--3.hidden
         legend.bigger Please enter the preferred names of all those attending:
@@ -46,3 +46,10 @@ block body
       button(type='button' id='rsvp-submit')
         | Send
         span →
+
+  div#rsvp-dialog
+    div(tabindex='-1' data-a11y-dialog-hide)
+    dialog(aria-labelledby='dialog-title')
+      button(type='button' aria-label='Close this dialog window' data-a11y-dialog-hide) &times;
+      h1#dialog-title You've RSVP'd! Thanks!
+      a.back(href='/index.html') Take me back to the good stuff!

@@ -272,6 +272,22 @@ legend {
   margin-top: .5em;
 }
 
+[data-a11y-dialog-native] > :first-child {
+  display: none;
+}
+
+dialog[open] {
+  display: block;
+}
+
+.dialog-container[aria-hidden='true'] {
+  display: none;
+}
+
+.back {
+  font-size: 2em;
+}
+
 @keyframes border {
   0% {
     border-color: palette(blue);
