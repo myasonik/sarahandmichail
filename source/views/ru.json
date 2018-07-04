@@ -21,8 +21,7 @@
   "index.itinerary.ceremony.time": "15:30",
   "index.itinerary.ceremony.address.lineTwo": "10606 N Lake Shore Dr",
   "index.itinerary.ceremony.address.lineThree": "Mequon, WI 53092",
-  "index.itinerary.ceremony.desc": "Virmond Парк памятное место для нас. Подростками мы проводили много вечеров и выходных в нем. Мы очень рады обручиться в месте с которым связано так много воспоминаний и которое дорого нашему сердцу.
-",
+  "index.itinerary.ceremony.desc": "Virmond Парк памятное место для нас. Подростками мы проводили много вечеров и выходных в нем. Мы очень рады обручиться в месте с которым связано так много воспоминаний и которое дорого нашему сердцу.",
   "index.itinerary.photos.title": "Семейные фотографии",
   "index.itinerary.photos.time": "16:00",
   "index.itinerary.photos.desc": "Время, когда наши семьи сделают несколько фотографий в парке.",
@@ -80,7 +79,7 @@
   "index.photos.disclaimer": "Come back soon for an area to download all the photos you see here, see some new photos, and upload any photos you have or may take of us!",
   "index.faq.one.q": "Есть ли регистрация в магазине?",
   "index.faq.one.a.lineOne": "Подарки не обязательны - достаточно вашего присутствия! Для тех кто пожелает выразить своё внимание и любовь в виде подарка у нас есть несколько вариантов:",
-    "index.faq.one.a.lineTwo": "mожете сделать пожертвование <a href='https://www.centreforeffectivealtruism.org/donate/'>Center for Effective Altruism</a> в нашу честь",
+  "index.faq.one.a.lineTwo": "mожете сделать пожертвование <a href='https://www.centreforeffectivealtruism.org/donate/'>Center for Effective Altruism</a> в нашу честь",
   "index.faq.one.a.lineThree": "<a href='https://www.blueprintregistry.com/registry/sarah-and-michail'>внести некоторую сумму денег в фонд наших будущих путешествий или выбрать подарок</a>",
   "index.faq.one.a.lineFour": "Если вы решили положиться на свой вкус и инстинкт пожалуйста примите во внимание что мы планируем путешествовать с двумя чемоданами и все наши вещи будут храниться на складе.",
   "index.faq.two.q": "Могу ли я привести кого-то с собой?",
