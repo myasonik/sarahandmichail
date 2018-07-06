@@ -34,7 +34,7 @@ var myEfficientFn = debounce(function() {
     relax.destroy();
   }
 
-  if (window.matchMedia('(min-width:1024px)').matches)
+  if (window.matchMedia('(min-width:1024px)').matches) {
     relax = new Rellax('.rellax', {
       speed: ((window.innerWidth - 946)*76)/656,
       center: false,
