@@ -1,14 +1,18 @@
 import Rellax from 'rellax';
 import A11yDialog from 'a11y-dialog';
 
-let relax = new Rellax('.rellax', {
-  speed: ((window.innerWidth - 946)*76)/656,
-  center: false,
-  wrapper: null,
-  round: true,
-  vertical: true,
-  horizontal: false
-});
+let relax;
+
+if (window.matchMedia('(min-width:1024px)').matches) {
+  relax = new Rellax('.rellax', {
+    speed: ((window.innerWidth - 946)*76)/656,
+    center: false,
+    wrapper: null,
+    round: true,
+    vertical: true,
+    horizontal: false
+  });
+}
 
 function debounce(func, wait, immediate) {
 	var timeout;
@@ -26,15 +30,20 @@ function debounce(func, wait, immediate) {
 };
 
 var myEfficientFn = debounce(function() {
-  relax.destroy();
-  relax = new Rellax('.rellax', {
-    speed: ((window.innerWidth - 946)*76)/656,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-  });
+  if (relax.destroy) {
+    relax.destroy();
+  }
+
+  if (window.matchMedia('(min-width:1024px)').matches)
+    relax = new Rellax('.rellax', {
+      speed: ((window.innerWidth - 946)*76)/656,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  }
 }, 250);
 
 window.addEventListener('resize', myEfficientFn);
