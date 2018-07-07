@@ -289,7 +289,7 @@ block body
     div(tabindex='-1' data-a11y-dialog-hide)
     dialog(aria-labelledby='dialog-title')
       button(type='button' aria-label='Close this dialog window' data-a11y-dialog-hide) &times;
-      h1#dialog-title You’ve RSVP’d! Thanks!
+      h1#dialog-title #{index.rsvp.thanks}
 
   if !production
       script(src='/main.js')

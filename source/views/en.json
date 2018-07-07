@@ -94,5 +94,19 @@
   "index.faq.six.q": "Whom should I call with questions?",
   "index.faq.six.a": "Contact Sarah (262-227-7987) or Michail (414-574-1755) with any questions that might come up.",
   "index.faq.seven.q": "I am coming from out of town. Where should I stay?",
-  "index.faq.seven.a": "Wherever you want! We’re not reserving any rooms any place, but we’re happy to help you find someplace to stay! We’ve got family and friends in the area that are happy to host our guests, otherwise we’d recommend AirBnB or one of the hotels in the Milwaukee area."
+  "index.faq.seven.a": "Wherever you want! We’re not reserving any rooms any place, but we’re happy to help you find someplace to stay! We’ve got family and friends in the area that are happy to host our guests, otherwise we’d recommend AirBnB or one of the hotels in the Milwaukee area.",
+  "index.rsvp.thanks": "You’ve RSVP’d! Thanks!",
+  "rsvp.title": "Thank you for RSVP'ing!",
+  "rsvp.required": "This field is required.",
+  "rsvp.q1": "Please enter the name on your invitation:",
+  "rsvp.q1.matchError": "Please use one of the available options or call if you're having trouble.",
+  "rsvp.q2": "Will you be attending?",
+  "rsvp.q2.yes": "Yes",
+  "rsvp.q2.no": "No",
+  "rsvp.q3": "Please enter the preferred names of all those attending:",
+  "rsvp.q4": "Any dietary restrictions?",
+  "rsvp.q5": "What song will get you on the dance floor?",
+  "rsvp.q6": "Any advice for us?",
+  "rsvp.q7": "Any other messages you’d like to pass along?",
+  "rsvp.send": "Send"
 }
