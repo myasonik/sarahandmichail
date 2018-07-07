@@ -2,14 +2,14 @@ extends templates/master
 
 block body
   main#main.rsvp-page
-    h1 #{text.rsvp.title}
+    h1 #{text["rsvp.title"]}
 
     form(id='rsvp' autocomplete='off' name='rsvp' method='POST')
       fieldset.step.step--1
         label
-          span.bigger #{text.rsvp.q1}
-          p.error.error--required(hidden) #{text.rsvp.required}
-          p.error.error--match(hidden) #{text.rsvp.q1.matchError}
+          span.bigger #{text["rsvp.q1"]}
+          p.error.error--required(hidden) #{text["rsvp.required"]}
+          p.error.error--match(hidden) #{text["rsvp.q1.matchError"]}
           input#family_name(list='guests' autocomplete='nope' placeholder='Our lovely guest' required name='family_name')
         datalist(id='guests')
           option(data-count='4') Yasonik Family
@@ -17,36 +17,36 @@ block body
           option(data-count='4') Gorelik Family
           option(data-count='2') Michael Gorelik
       fieldset.step.step--2
-        legend.bigger #{text.rsvp.q2}
-        p.error.error--required(hidden) #{text.rsvp.required}
+        legend.bigger #{text["rsvp.q2"]}
+        p.error.error--required(hidden) #{text["rsvp.required"]}
         div
           label
             input#attending(type='radio' name='is_attending' value='Yes' required)
-            span #{text.rsvp.q1.yes}
+            span #{text["rsvp.q1.yes"]}
           label
             input#nope(type='radio' name='is_attending' value='No' required)
-            span #{text.rsvp.q2.no}
+            span #{text["rsvp.q2.no"]}
       fieldset.step.step--3.hidden
-        legend.bigger #{text.rsvp.q3}
+        legend.bigger #{text["rsvp.q3"]}
         div.rsvp__count
       fieldset.step.hidden
         div
           label
-            span #{text.rsvp.q4}
+            span #{text["rsvp.q4"]}
             textarea(rows=3 name='dietary_restrictions')
         div
           label
-            span #{text.rsvp.q5}
+            span #{text["rsvp.q5"]}
             textarea(rows=3 name='song_selections')
         div
           label
-            span #{text.rsvp.q6}
+            span #{text["rsvp.q6"]}
             textarea(rows=3 name='advice')
         div
           label
-            span #{text.rsvp.q7}
+            span #{text["rsvp.q7"]}
             textarea(rows=3 name='additional_comments')
-      button(type='button' id='rsvp-submit') #{text.rsvp.send}
+      button(type='button' id='rsvp-submit') #{text["rsvp.send"]}
 
   script(src='https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js')
   if !production

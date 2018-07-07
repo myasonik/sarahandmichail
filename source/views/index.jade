@@ -289,7 +289,7 @@ block body
     div(tabindex='-1' data-a11y-dialog-hide)
     dialog(aria-labelledby='dialog-title')
       button(type='button' aria-label='Close this dialog window' data-a11y-dialog-hide) &times;
-      h1#dialog-title #{text.index.rsvp.thanks}
+      h1#dialog-title #{text['index.rsvp.thanks']}
 
   if !production
       script(src='/main.js')
