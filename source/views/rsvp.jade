@@ -12,17 +12,71 @@ block body
           p.error.error--match(hidden) #{text["rsvp.q1.matchError"]}
           input#family_name(list='guests' autocomplete='nope' placeholder='Our lovely guest' required name='family_name')
         datalist(id='guests')
-          option(data-count='4') Yasonik Family
-          option(data-count='2') Fuchs Family
-          option(data-count='4') Gorelik Family
-          option(data-count='2') Michael Gorelik
+          option(data-count='2') Mark &amp; Dawn Fuchs
+          option(data-count='2') Johnny &amp; Kira Sparks
+          option(data-count='5') The Nielson Family
+          option(data-count='2') Jack &amp; Dorothea Murphy
+          option(data-count='2') Laurieann &amp; Mark Endres
+          option(data-count='2') Mark Endres &amp; Guest
+          option(data-count='3') The Parulski Family
+          option(data-count='1') Luke Endres
+          option(data-count='4') Brice &amp; JJ Murphy Family
+          option(data-count='2') Casey &amp; Nick Murphy
+          option(data-count='3') John &amp; Leslie Murphy, Clare Murphy
+          option(data-count='1') Cole Murphy
+          option(data-count='2') Patrick Murphy &amp; Guest
+          option(data-count='4') Dan &amp; Jessica Murphy Family
+          option(data-count='2') Mary &amp; Dave Fuchs
+          option(data-count='3') Michael Fuchs &amp; Guest, Paul Fuchs
+          option(data-count='2') David Fuchs &amp; Guest
+          option(data-count='1') Andrew Fuchs
+          option(data-count='4') Cindy &amp; Bruce Habig, Katie, Matt
+          option(data-count='2') Robbie Habig &amp; Guest
+          option(data-count='5') The Spotts Family
+          option(data-count='3') The O'Connor Family
+          option(data-count='2') Emma Storm &amp; Guest
+          option(data-count='4') Gianluca Giavitto &amp; Family
+          option(data-count='3') Sunaho Aizawa &amp; Family
+          option(data-count='2') Jon &amp; Angela Walker
+          option(data-count='6') The Cline Family
+          option(data-count='2') Karen &amp; Kris McKinney
+          option(data-count='2') Steve &amp; Abby Carpenter
+          option(data-count='2') Tim &amp; Kari Andersen
+          option(data-count='1') Mary Tatera
+          option(data-count='2') Jerry &amp; Lucy Kluessendorf
+          option(data-count='2') Mary &amp; Rob Anderson
+          option(data-count='2') Dick &amp; Marti Michell
+          option(data-count='3') The Yasonik Family
+          option(data-count='2') Sofya Feldman &amp; Ruvim Nayshuler
+          option(data-count='5') The Akseruld Family and Brandon Pick
+          option(data-count='2') Aleksandra Sinenko &amp; Sweetlana Portnaya
+          option(data-count='1') Yevgeniy Portnoy
+          option(data-count='4') The Gorelik Family
+          option(data-count='2') Lara &amp; Zoya Lubarova
+          option(data-count='2') Mikhail Gorelik &amp; Nisreen Salka
+          option(data-count='4') The Sobolevsky Family
+          option(data-count='3') The Milman Family
+          option(data-count='2') Zina Milshteyn &amp; Ura Misuk
+          option(data-count='3') The Shats Family
+          option(data-count='3') The Lotman Family
+          option(data-count='2') Sam &amp; Bluma Lotman
+          option(data-count='2') Will Orr &amp; Guest
+          option(data-count='2') Angel Chen &amp; Guest
+          option(data-count='2') Megan Gray &amp; Guest
+          option(data-count='2') Marshall Summwalt &amp; Guest
+          option(data-count='2') Eric Hanson &amp; Guest
+          option(data-count='2') Adam Miller &amp; Guest
+          option(data-count='2') Natasha &amp; Oleg Zhoglo
+          option(data-count='2') Cody Coats &amp; Micah Grossman
+          option(data-count='2') Yulia Gorman &amp; Guest
+          option(data-count='2') Lavie Kakol &amp; Guest
       fieldset.step.step--2
         legend.bigger #{text["rsvp.q2"]}
         p.error.error--required(hidden) #{text["rsvp.required"]}
         div
           label
             input#attending(type='radio' name='is_attending' value='Yes' required)
-            span #{text["rsvp.q1.yes"]}
+            span #{text["rsvp.q2.yes"]}
           label
             input#nope(type='radio' name='is_attending' value='No' required)
             span #{text["rsvp.q2.no"]}
