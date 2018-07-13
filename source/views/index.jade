@@ -37,7 +37,7 @@ block body
           p #{text['index.itinerary.ceremony.address.lineThree']}
         details.itinerary__map
           summary #{text['index.itinerary.map']}
-          iframe.full-width(src='https://www.google.com/maps/embed/v1/place?key=AIzaSyAD3ow3jbGkVnlpEUB8wM-Imp6A0SVaEqg&q=place_id:ChIJ91jlwxjhBIgRgHC28q9I5ls')
+          iframe.full-width(src=text["index.itinerary.ceremony.map"])
         p #{text['index.itinerary.ceremony.desc']}
       section.itinerary
         header.itinerary__title
@@ -55,7 +55,7 @@ block body
           p #{text['index.itinerary.cocktail.address.lineThree']}
         details.itinerary__map
           summary #{text['index.itinerary.map']}
-          iframe.full-width(src='https://www.google.com/maps/embed/v1/directions?key=AIzaSyAD3ow3jbGkVnlpEUB8wM-Imp6A0SVaEqg&origin=Virmond+Park,Mequon+WI&destination=The+Box,Milwaukee+WI')
+          iframe.full-width(src=text["index.itinerary.cocktail.map"])
         p #{text['index.itinerary.cocktail.desc']}
       section.itinerary
         header.itinerary__title
