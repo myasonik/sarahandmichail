@@ -1,17 +1,28 @@
 import Rellax from 'rellax';
 import A11yDialog from 'a11y-dialog';
+import Siema from 'siema';
 
 let relax;
+let siema;
 
-if (window.matchMedia('(min-width:1024px)').matches) {
-  relax = new Rellax('.rellax', {
-    speed: ((window.innerWidth - 946)*76)/656,
-    center: false,
-    wrapper: null,
-    round: true,
-    vertical: true,
-    horizontal: false
-  });
+establishPhotoCollection();
+
+function establishPhotoCollection() {
+  if (siema && siema.destroy) siema.destroy(true);
+  if (relax && relax.destroy) relax.destroy();
+
+  if (window.matchMedia('(min-width:1024px)').matches) {
+    relax = new Rellax('.rellax', {
+      speed: ((window.innerWidth - 946)*76)/656,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  } else {
+    siema = new Siema();
+  }
 }
 
 function debounce(func, wait, immediate) {
@@ -29,22 +40,7 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-var myEfficientFn = debounce(function() {
-  if (relax.destroy) {
-    relax.destroy();
-  }
-
-  if (window.matchMedia('(min-width:1024px)').matches) {
-    relax = new Rellax('.rellax', {
-      speed: ((window.innerWidth - 946)*76)/656,
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    });
-  }
-}, 250);
+var myEfficientFn = debounce(establishPhotoCollection, 250);
 
 window.addEventListener('resize', myEfficientFn);
 

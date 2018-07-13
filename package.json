@@ -43,6 +43,7 @@
     "a11y-dialog": "^5.1.2",
     "awesomplete": "^1.1.2",
     "rellax": "^1.6.2",
+    "siema": "^1.5.1",
     "url-search-params": "^0.10.0"
   }
 }
