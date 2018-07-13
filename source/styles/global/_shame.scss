@@ -140,6 +140,7 @@
 
   h1 {
     font-size: 9vw;
+    padding-bottom: 0;
   }
 
   @include breakpoint($two) {
@@ -346,6 +347,10 @@ dialog {
     font-size: 2em;
     line-height: .5;
     font-family: 'Comfortaa', serif;
+  }
+
+  h1 {
+    text-align: left;
   }
 }
 

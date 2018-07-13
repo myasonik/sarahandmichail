@@ -8,21 +8,26 @@ let awesompleteTriggered = false;
 let attending = false;
 let mapping = document.querySelectorAll('#guests option');
 mapping = [...mapping].reduce((mapping, element) => {
-  mapping[element.innerHTML] = element.dataset.count;
+  mapping[String(element.innerHTML).replace(/&amp;/g, '&')] = element.dataset.count;
   return mapping;
 }, {});
 new Awesomplete(input, {
   filter: (text, input) => Awesomplete.FILTER_CONTAINS(text.label.split(' Family')[0], input)
 });
 
+function unhide() {
+  let hidden = document.querySelectorAll('.hidden');
+  [...hidden].forEach((element) => {
+    element.classList.add('is-not-hidden');
+  });
+}
+
 window.addEventListener('awesomplete-select', function(event) {
   let guestCount = mapping[event.text.label];
   let countContainer = document.querySelector('.rsvp__count');
 
   awesompleteTriggered = true;
-  if (attending) {
-    document.querySelector('.step--3').classList.add('is-required');
-  }
+  if (attending) unhide();
 
   while (countContainer.firstChild) {
     countContainer.removeChild(countContainer.firstChild);
@@ -36,7 +41,9 @@ window.addEventListener('awesomplete-select', function(event) {
       let input = document.createElement('input');
       input.name = 'guest_name';
 
-      label.appendChild(document.createTextNode(`Person ${i+1}:`));
+      let personString = location.href.indexOf('/ru') > 0 ? 'Человек' : 'Person';
+
+      label.appendChild(document.createTextNode(`${personString} ${i+1}:`));
       label.appendChild(input);
       fields.appendChild(label);
     }
@@ -47,12 +54,7 @@ window.addEventListener('awesomplete-select', function(event) {
 
 document.getElementById('attending').addEventListener('click', function() {
   attending = true;
-  if (awesompleteTriggered) {
-    let hidden = document.querySelectorAll('.hidden');
-    [...hidden].forEach((element) => {
-      element.classList.add('is-not-hidden');
-    });
-  }
+  if (awesompleteTriggered) unhide();
 });
 
 document.getElementById('nope').addEventListener('click', function() {
@@ -63,11 +65,31 @@ document.getElementById('nope').addEventListener('click', function() {
 });
 
 // Allows for user submissions of RSVPs
+// Finds and submits all RSVPs for a family. Handles success/error redirect logic.
 const rsvpSubmit = document.getElementById('rsvp-submit');
-  rsvpSubmit.addEventListener('click', submitHandler);
+rsvpSubmit.addEventListener('click', () => {
+  if (!document.querySelector('.error--match').hasAttribute('hidden')) {
+    return;
+  }
+
+  const pendingRsvps = getPendingRsvps();
+
+  if (!pendingRsvps) return;
+
+  Promise.all(pendingRsvps).then(() => {
+    let href = window.location.href;
+
+    localStorage.setItem('didRSVP', 'true');
+
+    if (href.indexOf('/ru/') > 0) {
+      window.location.assign(`${window.location.origin}/ru/`);
+    } else {
+      window.location.assign(`${window.location.origin}`);
+    }
+  });
+});
 
 // Applies error class to form fields with invalid content
-const requiredIds = ['family_name', 'attending', 'nope'];
 document.getElementById('family_name').addEventListener('blur', (event) => {
   let step = input.parentElement;
 
@@ -75,12 +97,15 @@ document.getElementById('family_name').addEventListener('blur', (event) => {
     step = step.parentElement;
   }
 
-  if (!mapping[event.target.value]) {
+  let value = event.target.value;
+  if (!mapping[value]) {
     step.querySelector('.error--match').removeAttribute('hidden');
   } else {
     step.querySelector('.error--match').setAttribute('hidden', 'hidden');
   }
 });
+
+const requiredIds = ['family_name', 'attending', 'nope'];
 requiredIds.forEach(id => {
   const input = document.getElementById(id);
   if (input) {
@@ -108,26 +133,6 @@ requiredIds.forEach(id => {
     });
   }
 });
-
-// Finds and submits all RSVPs for a family. Handles success/error redirect logic.
-// @return void
-function submitHandler() {
-  const pendingRsvps = getPendingRsvps();
-
-  if (!pendingRsvps) return;
-
-  Promise.all(pendingRsvps).then(() => {
-    let href = window.location.href;
-
-    localStorage.setItem('didRSVP', 'true');
-
-    if (href.indexOf('/ru/') > 0) {
-      window.location.assign(`${window.location.origin}/ru/`);
-    } else {
-      window.location.assign(`${window.location.origin}`);
-    }
-  });
-};
 
 // accesses RSVP form to determine which RSVPs should be created.
 // @return [Array<Promise>]
