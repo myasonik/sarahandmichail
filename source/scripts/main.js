@@ -44,6 +44,9 @@ var myEfficientFn = debounce(establishPhotoCollection, 250);
 
 window.addEventListener('resize', myEfficientFn);
 
+document.querySelector('.arrow--left').addEventListener('click', () => siema.prev());
+document.querySelector('.arrow--right').addEventListener('click', () => siema.next());
+
 /**
  * Nav
  */
