@@ -286,7 +286,7 @@ block body
         dd #{text['index.faq.seven.a']}
 
   div#rsvp-dialog
-    div(tabindex='-1' data-a11y-dialog-hide)
+    div(tabindex='-1' data-a11y-dialog-hide).dialog-overlay
     dialog(aria-labelledby='dialog-title')
       button(type='button' aria-label='Close this dialog window' data-a11y-dialog-hide) &times;
       h1#dialog-title #{text['index.rsvp.thanks']}

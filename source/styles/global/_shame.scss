@@ -330,16 +330,30 @@ dialog[open] {
   display: block;
 }
 
-.dialog-container[aria-hidden='true'] {
+#rsvp-dialog[aria-hidden="true"] {
   display: none;
 }
 
-dialog {
+.dialog-overlay {
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.66);
   position: fixed;
   top: 0;
+  left: 0;
   bottom: 0;
-  margin: auto;
-  text-align: right;
+  right: 0;
+}
+
+dialog {
+  background-color: white;
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  border: 3px solid #333;
+  padding: 1em;
 
   button {
     border: none;
@@ -347,10 +361,12 @@ dialog {
     font-size: 2em;
     line-height: .5;
     font-family: 'Comfortaa', serif;
+    float: right;
   }
 
   h1 {
     text-align: left;
+    margin-top: .5em;
   }
 }
 

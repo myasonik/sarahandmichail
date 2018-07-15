@@ -109,12 +109,14 @@ setTime();
 timer = setInterval(setTime, minute);
 
 let didRSVP = localStorage.getItem('didRSVP');
+let dialog = document.getElementById('rsvp-dialog');
+let notDialog = document.querySelectorAll('body > *:not(div)');
+const rsvpDialog = new A11yDialog(dialog, notDialog);
 
 if (didRSVP === 'true') {
   document.querySelector('.rsvp-button').setAttribute('hidden', 'hidden');
 
   if (!localStorage.getItem('seenThankYouModal')) {
-    const rsvpDialog = new A11yDialog(document.getElementById('rsvp-dialog'));
     rsvpDialog.show();
     localStorage.setItem('seenThankYouModal', 'true');
   }
