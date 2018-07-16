@@ -93,12 +93,15 @@ const setTime = () => {
   const days = Math.floor(diff / msPerDay);
   const hrs = Math.floor(diff % msPerDay / msPerHour);
   const mins = Math.floor(diff % msPerHour / msPerMin);
-  let time = `${mins} minutes!`;
+  let isRussian = location.href.indexOf('/ru') > 0;
+
+
+  let time = isRussian ? `${mins} минут!` : `${mins} minutes!`;
 
   if (days > 0) {
-    time = `${days}d ${hrs}h ${mins}m`;
+    time = isRussian ? `${days}д. ${hrs}ч. ${mins}мин` : `${days}d ${hrs}h ${mins}m`;
   } else if (hrs > 0) {
-    time = `${hrs}h ${mins}m`;
+    time = isRussian ? `${hrs}ч. ${mins}мин`: `${hrs}h ${mins}m`;
   }
 
   if (diff > 0) {
