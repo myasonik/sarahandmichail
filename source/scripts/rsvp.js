@@ -11,9 +11,7 @@ mapping = [...mapping].reduce((mapping, element) => {
   mapping[String(element.innerHTML).replace(/&amp;/g, '&')] = element.dataset.count;
   return mapping;
 }, {});
-new Awesomplete(input, {
-  filter: (text, input) => Awesomplete.FILTER_CONTAINS(text.label.split(' Family')[0], input)
-});
+new Awesomplete(input);
 
 function unhide() {
   let hidden = document.querySelectorAll('.hidden');
