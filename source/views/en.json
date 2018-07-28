@@ -154,5 +154,7 @@
   "index.photos.eighteen.heading": "One of our last photos in SF",
   "index.photos.eighteen.time": "March 22, 2018",
   "index.photos.nineteen.heading": "Our first photo in Seattle",
-  "index.photos.nineteen.time": "June 02, 2018"
+  "index.photos.nineteen.time": "June 02, 2018",
+  "browserError.heading": "Your browser is out-of-date!",
+  "browserError.body": "Update your browser to view this website correctly. <a id='btnUpdateBrowser' href='https://outdatedbrowser.com/en/'>Update my browser now.</a>"
 }

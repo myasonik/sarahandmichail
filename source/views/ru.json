@@ -155,5 +155,7 @@
   "index.photos.eighteen.heading": "Одна из последних фотографий в Сан Франциско",
   "index.photos.eighteen.time": "22 марта 2018",
   "index.photos.nineteen.heading": "Первая фотография в Сиетле",
-  "index.photos.nineteen.time": "02 июня 2018"
+  "index.photos.nineteen.time": "02 июня 2018",
+  "browserError.heading": "Ваш браузер устарел!",
+  "browserError.body": "Обновите свой браузер, чтобы правильно просматривать этот сайт. <a id='btnUpdateBrowser' href='https://outdatedbrowser.com/ru/'>Обновите браузер.</a>"
 }

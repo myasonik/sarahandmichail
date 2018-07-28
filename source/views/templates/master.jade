@@ -18,3 +18,8 @@ html(lang="en")
 
     body
         block body
+
+    #outdated
+        h6 #{text['browserError.heading']}
+        p !{text['browserError.body']}
+        p.last: a(href='#' id='btnCloseUpdateBrowser' title='Close' role='button' aria-label='Close') &times;
