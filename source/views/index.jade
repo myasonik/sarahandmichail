@@ -29,6 +29,18 @@ block body
       h2.forever-full.bkgd-blue: span #{text['index.nav.itinerary']}
       section.itinerary
         header.itinerary__title
+          h3 #{text['index.itinerary.rehearsal.title']}
+          p: time(datetime='2018-09-07 19:00') #{text['index.itinerary.rehearsal.time']}
+        address
+          p #{text['index.itinerary.rehearsal.clubhouse']}
+          p #{text['index.itinerary.rehearsal.address.lineTwo']}
+          p #{text['index.itinerary.rehearsal.address.lineThree']}
+        details.itinerary__map
+          summary #{text['index.itinerary.map']}
+          iframe.full-width(src=text["index.itinerary.rehearsal.map"])
+        p #{text['index.itinerary.rehearsal.desc']}
+      section.itinerary
+        header.itinerary__title
           h3 #{text['index.itinerary.ceremony.title']}
           p: time(datetime='2018-09-08 15:30') #{text['index.itinerary.ceremony.time']}
         address
@@ -266,12 +278,12 @@ block body
       h2.forever-full.bkgd-red: span #{text['index.nav.faq']}
       dl.faq
         dt.heading #{text['index.faq.one.q']}
-        dd #{text['index.faq.one.a.lineOne']}
-          ul
-            li !{text['index.faq.one.a.lineTwo']}
-            li !{text['index.faq.one.a.lineThree']}
-            li !{text['index.faq.one.a.lineFour']}
-        dd #{text['index.faq.one.a.lineFive']}
+        dd !{text['index.faq.one.a.lineOne']}
+          ul: li !{text['index.faq.one.a.lineTwo']}
+        dd #{text['index.faq.one.a.lineThree']}
+          ul: li !{text['index.faq.one.a.lineFour']}
+        dd !{text['index.faq.one.a.lineFive']}
+          ul: li !{text['index.faq.one.a.lineSix']}
         dt.heading #{text['index.faq.two.q']}
         dd #{text['index.faq.two.a']}
         dt.heading #{text['index.faq.three.q']}
